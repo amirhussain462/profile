@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Social Media Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            margin: 5px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+        }
+
+        .card-content p {
+            color: #555;
+        }
+
+        .reactions {
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        .reactions button {
+            background: none;
+            border: none;
+            color: #0073e6;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .reactions button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="your-photo.jpg" alt="Profile Picture">
+        <h1>Your Name</h1>
+        <p>Automation Engineer | Problem Solver | Innovator</p>
+        <div class="social-links">
+            <a href="#" title="LinkedIn">&#x1F465;</a>
+            <a href="#" title="GitHub">&#x1F4BB;</a>
+            <a href="#" title="Twitter">&#x1F426;</a>
+        </div>
+    </header>
+
+    <section class="feed">
+        <!-- Project 1 -->
+        <div class="card">
+            <img src="project1.jpg" alt="Project Image">
+            <div class="card-content">
+                <h3>Engineering Support in KSA</h3>
+                <p>Led the technical team, coordinated project operations, and trained engineers for ALS Logistic Solutions.</p>
+            </div>
+            <div class="reactions">
+                <button>&#128077; Like</button>
+                <button>&#128172; Comment</button>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+            <img src="project2.jpg" alt="Project Image">
+            <div class="card-content">
+                <h3>Site Handling/Management</h3>
+                <p>Overseeing maintenance for cargo handling and car turntable systems in Riyadh and Dammam.</p>
+            </div>
+            <div class="reactions">
+                <button>&#128077; Like</button>
+                <button>&#128172; Comment</button>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+            <img src="project3.jpg" alt="Project Image">
+            <div class="card-content">
+                <h3>Car Turntable Maintenance</h3>
+                <p>Conducted preventive maintenance for premium private villa clients in Riyadh.</p>
+            </div>
+            <div class="reactions">
+                <button>&#128077; Like</button>
+                <button>&#128172; Comment</button>
+            </div>
+        </div>
+
+        <!-- More cards... -->
+    </section>
+</body>
+</html>
 
