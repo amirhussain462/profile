@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience and Projects - Amir Hussain Shaik</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #5e35b1;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .job, .project-group {
+            margin-bottom: 2rem;
+        }
+
+        .job h3, .project-group h3 {
+            color: #3949ab;
+            font-size: 1.8rem;
+        }
+
+        .project h4 {
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #5e35b1;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Experience and Projects</h1>
+    </header>
+    <section id="content"></section>
+    <footer>
+        <p>© 2024 Amir Hussain Shaik</p>
+    </footer>
+    <script>
+        fetch('experience_projects.json')
+            .then(response => response.json())
+            .then(data => {
+                const content = document.getElementById('content');
+
+                // Experience Section
+                const experience = data.experience;
+                let experienceHTML = `<h2>${experience.title}</h2>`;
+                experience.jobs.forEach(job => {
+                    experienceHTML += `
+                        <div class="job">
+                            <h3>${job.title}</h3>
+                            <p><strong>${job.company}</strong> | ${job.duration}</p>
+                            <p>${job.description}</p>
+                        </div>`;
+                });
+
+                // Projects Section
+                const projects = data.projects;
+                let projectsHTML = `<h2>${projects.title}</h2>`;
+                projects.projectGroups.forEach(group => {
+                    projectsHTML += `<div class="project-group"><h3>${group.groupTitle}</h3>`;
+                    group.projects.forEach(project => {
+                        projectsHTML += `
+                            <div class="project">
+                                <h4>${project.title}</h4>
+                                <p>${project.description}</p>`;
+                        if (project.images) {
+                            projectsHTML += '<div class="project-photos">' + 
+                                project.images.map(img => `<img src="${img}" alt="${project.title}" style="width:100px;">`).join('') +
+                                '</div>';
+                        }
+                        projectsHTML += '</div>';
+                    });
+                    projectsHTML += `</div>`;
+                });
+
+                content.innerHTML = experienceHTML + projectsHTML;
+            })
+            .catch(error => console.error('Error loading data:', error));
+    </script>
+</body>
+</html>
