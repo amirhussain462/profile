@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Amir Hussain Shaik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: #003366;
+            color: white;
+            padding: 2rem;
+        }
+
+        #contact {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #003366;
+            color: white;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .fa {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+    <section id="contact"></section>
+    <footer>
+        <p>© 2024 Amir Hussain Shaik</p>
+    </footer>
+    <script>
+        fetch('contact.json')
+            .then(response => response.json())
+            .then(data => {
+                const section = document.getElementById('contact');
+                section.innerHTML = `
+                    <h2>${data.title}</h2>
+                    <p><strong><i class="fa fa-envelope"></i> ${data.email.label}:</strong> 
+                        <a href="mailto:${data.email.value}">${data.email.value}</a></p>
+                    <p><strong><i class="fa fa-video"></i> ${data.live_id.label}:</strong> 
+                        <a href="mailto:${data.live_id.value}">${data.live_id.value}</a></p>
+                    <p><strong><i class="fa fa-phone"></i> Phone:</strong>
+                        <ul>
+                            <li><strong>UAE:</strong> ${data.phone.UAE}</li>
+                            <li><strong>KSA:</strong> ${data.phone.KSA}</li>
+                            <li><strong>India:</strong> ${data.phone.India}</li>
+                        </ul>
+                    </p>
+                    <p><strong><i class="fa fa-linkedin"></i> ${data.linkedin.label}:</strong> 
+                        <a href="${data.linkedin.value}" target="_blank">${data.linkedin.value}</a></p>`;
+            })
+            .catch(error => console.error('Error loading contact data:', error));
+    </script>
+</body>
+</html>
