@@ -1,0 +1,75 @@
+{
+    "experience": {
+        "title": "Professional Experience",
+        "jobs": [
+            {
+                "title": "Automation Electrical Engineer",
+                "company": "ALS Logistic Solutions LLC, Dubai, UAE",
+                "duration": "Feb 2023 – Present",
+                "description": "Leading the installation, commissioning, and troubleshooting of electro-mechanical and automation systems for high-profile clients, ensuring optimal performance and reliability."
+            },
+            {
+                "title": "Automation Technician",
+                "company": "Emirates Flight Catering (EKFC) LLC, Dubai, UAE",
+                "duration": "Oct 2018 – Jan 2023",
+                "description": "Performed preventive maintenance, diagnostics, and system repairs for critical automation systems, minimizing downtime and ensuring operational excellence in a high-demand environment."
+            },
+            {
+                "title": "Technical Assistant and Test Centre Administrator",
+                "company": "Unidad Technologies & Solutions Pvt. Ltd., India",
+                "duration": "June 2017 – Sept 2018",
+                "description": "Assisted in configuring and maintaining test setups for automation projects, while providing technical support and managing administrative tasks efficiently."
+            },
+            {
+                "title": "Technician",
+                "company": "International Food & Consumable Goods Co. (IFCG), Jeddah, Saudi Arabia",
+                "duration": "Dec 2014 – Aug 2016",
+                "description": "Conducted maintenance and repairs on industrial systems, ensuring their seamless operation and contributing to the company’s production targets."
+            }
+        ]
+    },
+    "projects": {
+        "title": "Key Projects",
+        "projectGroups": [
+            {
+                "groupTitle": "Projects in KSA",
+                "projects": [
+                    {
+                        "title": "ALS Engineering Team Support and Operations Management",
+                        "description": "Led the technical team, coordinated project operations, and trained engineers, Technicians and Clients."
+                    },
+                    {
+                        "title": "Site Management (Installation, Commissioning and Maintenance)",
+                        "description": "Overseeing Installation, Modifications and maintenance for Automatic cargo handling System across Riyadh and Dammam in KSA.",
+                        "images": ["site_management1.jpg", "site_management2.jpg", "site_management3.jpg"]
+                    },
+                    {
+                        "title": "Car Turntable Installation and Maintenance",
+                        "description": "Led the Project Installation and Bi-Annual preventive maintenance for a private villa client in Riyadh, KSA.",
+                        "images": ["car_turntable1.jpg", "car_turntable2.jpg", "car_turntable3.jpg"]
+                    }
+                ]
+            },
+            {
+                "groupTitle": "Projects in UAE",
+                "projects": [
+                    {
+                        "title": "Installation of Kardex Electrical Sorting System",
+                        "description": "Successfully installed, commissioned and handed over a high-capacity material sorting machine in Abu Dhabi.",
+                        "images": ["kardex1.jpg", "kardex2.jpg", "kardex3.jpg"]
+                    },
+                    {
+                        "title": "Installation of Automated and Manual Car Parking Solutions",
+                        "description": "Led the installation, commissioning, and troubleshooting of automated and manual car parking systems across UAE.",
+                        "images": ["car_parking1.jpg", "car_parking2.jpg", "car_parking3.jpg"]
+                    },
+                    {
+                        "title": "Installation of Storage Racks and Conveyor Systems",
+                        "description": "Managed installation of Heavy Storage Racks and conveyor solutions for a major storage facility in Dubai.",
+                        "images": ["conveyor1.jpg", "conveyor2.jpg", "conveyor3.jpg"]
+                    }
+                ]
+            }
+        ]
+    }
+}
