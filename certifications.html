@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Amir Hussain Shaik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .certificates {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .certificate {
+            width: 200px;
+        }
+
+        .certificate img {
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Certifications</h1>
+    </header>
+    <section id="certifications"></section>
+    <footer>
+        <p>© 2024 Amir Hussain Shaik</p>
+    </footer>
+    <script>
+        fetch('certifications.json')
+            .then(response => response.json())
+            .then(data => {
+                const section = document.getElementById('certifications');
+                let html = `<h2>${data.title}</h2><div class="certificates">`;
+                data.certificates.forEach(cert => {
+                    html += `
+                        <div class="certificate">
+                            <a href="${cert.file}" target="_blank" download>
+                                <img src="${cert.image}" alt="${cert.name}">
+                            </a>
+                            <p>${cert.name}</p>
+                        </div>`;
+                });
+                html += '</div>';
+                section.innerHTML = html;
+            })
+            .catch(error => console.error('Error loading certifications:', error));
+    </script>
+</body>
+</html>
