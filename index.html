@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9PZEPG3EV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T9PZEPG3EV');
-</script>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9PZEPG3EV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-T9PZEPG3EV');
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amir Hussain Shaik - Portfolio</title>
@@ -84,59 +83,6 @@
             font-size: 2.2rem;
         }
 
-        /* About Section Styling */
-        .about-section {
-            background-color: #e3f2fd;
-            padding: 3rem 2rem;
-        }
-
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 2rem;
-        }
-
-        .about-content {
-            flex: 1 1 50%;
-            max-width: 600px;
-            text-align: justify;
-        }
-
-        .about-content h2 {
-            color: #3949ab;
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-content p {
-            line-height: 1.8;
-            font-size: 1.2rem;
-            color: #444;
-            margin-bottom: 1rem;
-        }
-
-        .about-image {
-            flex: 1 1 40%;
-            max-width: 400px;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .about-image img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer Styling */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -158,48 +104,29 @@
     </header>
     <nav>
         <a href="#about">About Me</a>
-        <a href="skills.html" target="_blank">Skills</a>
-        <a href="experience.html" target="_blank">Experience</a>
-	<a href="projects.html" target="_blank">Projects</a>
-	<a href="gallery.html" target="_blank">Gallery</a>
-	<a href="certifications.html" target="_blank">Certifications</a>
-        <a href="contact.html" target="_blank">Contact</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience_projects.html">Experience & Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <!-- About Section -->
-<section id="about" class="about-section">
-    <div class="about-container">
-        <!-- About Content -->
-        <div class="about-content">
-            <h2>About Me</h2>
-            <p>
-                As a results-driven <strong>Automation & Electrical Engineer</strong>, I bring over 
-                <strong>9 years of expertise</strong> in designing, installing, and optimizing cutting-edge systems 
-                for industries across the UAE and Saudi Arabia. My portfolio includes transformative 
-                projects in <em>material handling systems</em>, <em>automated car parking solutions</em>, 
-                and <em>conveyor installations</em>, tailored to meet complex operational challenges.
-            </p>
-            <p>
-                Leveraging my <strong>Lean Six Sigma Black Belt certification</strong>, I excel in delivering 
-                streamlined processes that reduce downtime, optimize resources, and enhance overall 
-                system efficiency. My commitment to excellence ensures projects are executed with 
-                precision, adhering to the highest standards of safety and quality.
-            </p>
-            <p>
-                Beyond technical expertise, I am passionate about leadership, client engagement, and 
-                innovation. I thrive in cross-functional team settings, providing training and support 
-                that empowers teams to achieve long-term operational success. Whether overcoming 
-                technical challenges or pioneering new solutions, I am dedicated to driving impactful 
-                results.
-            </p>
-            <p><strong>Let’s collaborate to shape the future of engineering excellence!</strong></p>
-        </div>
-        <!-- About Image -->
-        <div class="about-image">
-            <img src="about_me.jpg" alt="About Me" />
-        </div>
-    </div>
-</section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            As a results-driven <strong>Automation & Electrical Engineer</strong>, I bring over 
+            <strong>9 years of expertise</strong> in designing, installing, and optimizing cutting-edge systems 
+            for industries across the UAE and Saudi Arabia. My portfolio includes transformative 
+            projects in <em>material handling systems</em>, <em>automated car parking solutions</em>, 
+            and <em>conveyor installations</em>, tailored to meet complex operational challenges.
+        </p>
+        <p>
+            Leveraging my <strong>Lean Six Sigma Black Belt certification</strong>, I excel in delivering 
+            streamlined processes that reduce downtime, optimize resources, and enhance overall 
+            system efficiency. My commitment to excellence ensures projects are executed with 
+            precision, adhering to the highest standards of safety and quality.
+        </p>
+    </section>
 
     <!-- Footer -->
     <footer>
