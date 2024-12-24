@@ -6,53 +6,114 @@
     <title>Contact - Amir Hussain Shaik</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
             color: #333;
-            text-align: center;
+            line-height: 1.6;
         }
 
         header {
-            background: #003366;
+            background: #3949ab;
             color: white;
+            text-align: center;
             padding: 2rem;
         }
 
-        #contact {
-            max-width: 600px;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a237e;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
             margin: 2rem auto;
             background: white;
-            padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #1a237e;
+            border-bottom: 2px solid #3949ab;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: #e8f5e9;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #3949ab;
+            margin-bottom: 1rem;
         }
 
         footer {
             text-align: center;
             padding: 1rem;
-            background: #003366;
+            background: #3949ab;
             color: white;
         }
 
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .fa {
-            margin-right: 8px;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Contact Me</h1>
+        <h1>Contact</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience_projects.html">Experience & Projects</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
-    <section id="contact"></section>
+    <section>
+        <h2>Contact Me</h2>
+        <div class="contact-info" id="contact-info"></div>
+    </section>
     <footer>
         <p>© 2024 Amir Hussain Shaik</p>
     </footer>
@@ -60,22 +121,11 @@
         fetch('contact.json')
             .then(response => response.json())
             .then(data => {
-                const section = document.getElementById('contact');
-                section.innerHTML = `
-                    <h2>${data.title}</h2>
-                    <p><strong><i class="fa fa-envelope"></i> ${data.email.label}:</strong> 
-                        <a href="mailto:${data.email.value}">${data.email.value}</a></p>
-                    <p><strong><i class="fa fa-video"></i> ${data.live_id.label}:</strong> 
-                        <a href="mailto:${data.live_id.value}">${data.live_id.value}</a></p>
-                    <p><strong><i class="fa fa-phone"></i> Phone:</strong>
-                        <ul>
-                            <li><strong>UAE:</strong> ${data.phone.UAE}</li>
-                            <li><strong>KSA:</strong> ${data.phone.KSA}</li>
-                            <li><strong>India:</strong> ${data.phone.India}</li>
-                        </ul>
-                    </p>
-                    <p><strong><i class="fa fa-linkedin"></i> ${data.linkedin.label}:</strong> 
-                        <a href="${data.linkedin.value}" target="_blank">${data.linkedin.value}</a></p>`;
+                const contactInfo = document.getElementById('contact-info');
+                const email = `<div class="contact-item"><i class="fa fa-envelope"></i><p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p></div>`;
+                const phone = `<div class="contact-item"><i class="fa fa-phone"></i><p><strong>Phone:</strong> ${data.phone}</p></div>`;
+                const linkedin = `<div class="contact-item"><i class="fa fa-linkedin"></i><p><strong>LinkedIn:</strong> <a href="${data.linkedin}" target="_blank">${data.linkedin}</a></p></div>`;
+                contactInfo.innerHTML = email + phone + linkedin;
             })
             .catch(error => console.error('Error loading contact data:', error));
     </script>
