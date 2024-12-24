@@ -50,18 +50,47 @@
             z-index: 2;
         }
 
-        /* Navigation Menu Styling */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #212121;
-            padding: 1rem 0;
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
         }
 
-        nav a {
+        header p {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Navigation Menu Styling */
+        nav {
+            background-color: #212121;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        nav .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
             color: #eee;
             text-decoration: none;
-            margin: 0 1rem;
             padding: 0.5rem 1rem;
             font-size: 1rem;
             font-weight: bold;
@@ -69,9 +98,31 @@
             transition: background 0.3s, transform 0.3s;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             background-color: #333;
             transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #212121;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                z-index: 2;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav .menu-toggle {
+                display: block;
+            }
         }
 
         /* About Section Styling */
@@ -98,6 +149,11 @@
         .about-content {
             flex: 2;
             min-width: 300px;
+            background: #fff;
+            border: 2px solid #6200ea;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
 
         .about-content h2 {
@@ -172,11 +228,14 @@
     </header>
 
     <nav>
-        <a href="#about">About Me</a>
-        <a href="skills.html">Skills</a>
-        <a href="experience_projects.html">Experience & Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="contact.html">Contact</a>
+        <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="experience_projects.html">Experience & Projects</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Main Section -->
@@ -197,5 +256,12 @@
     <footer>
         <p>Portfolio of Amir Hussain Shaik | Powered by GitHub Pages</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
