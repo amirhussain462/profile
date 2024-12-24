@@ -47,7 +47,7 @@
 
         section {
             padding: 2rem;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 2rem auto;
             background: white;
             border-radius: 10px;
@@ -59,19 +59,14 @@
             border-bottom: 2px solid #3949ab;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
             text-align: center;
         }
 
         .contact-item {
-            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
             background: #e8f5e9;
-            border-radius: 10px;
+            border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -82,9 +77,15 @@
         }
 
         .contact-item i {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #3949ab;
-            margin-bottom: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .contact-item p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            color: #333;
         }
 
         footer {
@@ -112,22 +113,31 @@
     </header>
     <section>
         <h2>Contact Me</h2>
-        <div class="contact-info" id="contact-info"></div>
+        <div id="contact-info">
+            <div class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <p><strong>Email:</strong> <a href="mailto:amirhussain462@gmail.com">amirhussain462@gmail.com</a></p>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone"></i>
+                <p><strong>UAE:</strong> +971-547637988</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone"></i>
+                <p><strong>KSA:</strong> +966-508795954</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-phone"></i>
+                <p><strong>India:</strong> +91-8885321600</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa fa-linkedin"></i>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amirhussainshaik" target="_blank">linkedin.com/in/amirhussainshaik</a></p>
+            </div>
+        </div>
     </section>
     <footer>
         <p>© 2024 Amir Hussain Shaik</p>
     </footer>
-    <script>
-        fetch('contact.json')
-            .then(response => response.json())
-            .then(data => {
-                const contactInfo = document.getElementById('contact-info');
-                const email = `<div class="contact-item"><i class="fa fa-envelope"></i><p><strong>Email:</strong> <a href="mailto:${data.email}">${data.email}</a></p></div>`;
-                const phone = `<div class="contact-item"><i class="fa fa-phone"></i><p><strong>Phone:</strong> ${data.phone}</p></div>`;
-                const linkedin = `<div class="contact-item"><i class="fa fa-linkedin"></i><p><strong>LinkedIn:</strong> <a href="${data.linkedin}" target="_blank">${data.linkedin}</a></p></div>`;
-                contactInfo.innerHTML = email + phone + linkedin;
-            })
-            .catch(error => console.error('Error loading contact data:', error));
-    </script>
 </body>
 </html>
