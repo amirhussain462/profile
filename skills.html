@@ -10,65 +10,53 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #eef2f3, #ffffff);
+            background-color: #eef2f3;
             color: #333;
         }
 
         header {
-            background: #3949ab;
+            background-color: #3949ab;
             color: white;
-            padding: 1.5rem;
+            padding: 1rem 0;
             text-align: center;
         }
 
         header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
             margin: 0;
-            font-size: 2rem;
-            text-transform: uppercase;
         }
 
         header nav {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            background-color: #1a237e;
+            padding: 0.5rem 0;
         }
 
         header nav a {
-            color: #ffcc80;
+            color: white;
             text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
             font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background 0.3s, transform 0.3s;
         }
 
         header nav a:hover {
-            background-color: #1a237e;
-            transform: scale(1.1);
-        }
-
-        .tagline {
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #ffcc80;
+            text-decoration: underline;
         }
 
         section {
-            padding: 2.5rem;
+            padding: 2rem;
             max-width: 1200px;
             margin: 2rem auto;
             background: white;
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            text-align: center;
         }
 
         section h2 {
             font-size: 2rem;
             color: #3949ab;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border-bottom: 3px solid #3949ab;
             display: inline-block;
             padding-bottom: 0.5rem;
@@ -82,9 +70,9 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, #e3f2fd, #e1f5fe);
+            background: linear-gradient(135deg, #f3f4f6, #ffffff);
             border-radius: 10px;
-            padding: 1rem;
+            padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -97,15 +85,14 @@
         }
 
         .skill-item p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
-            margin: 0;
-            color: #1a237e;
+            margin: 1rem 0 0;
+            color: #3949ab;
         }
 
         .skill-icon {
-            font-size: 2.5rem;
-            color: #3949ab;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
@@ -130,7 +117,6 @@
 <body>
     <header>
         <h1>Skills</h1>
-        <p class="tagline" id="tagline"></p>
         <nav>
             <a href="index.html">Home</a>
             <a href="skills.html">Skills</a>
@@ -155,17 +141,36 @@
         fetch('skills.json')
             .then(response => response.json())
             .then(data => {
-                // Inject tagline
-                document.getElementById('tagline').textContent = data.tagline;
-
-                // Populate skills
                 const skillsGrid = document.getElementById('skills-grid');
-                skillsGrid.innerHTML = data.skills.map(skill => `
-                    <div class="skill-item">
-                        <i class="fas fa-tools skill-icon"></i>
-                        <p>${skill}</p>
-                    </div>
-                `).join('');
+                skillsGrid.innerHTML = data.skills.map(skill => {
+                    let iconClass = "";
+                    switch (skill.toLowerCase()) {
+                        case 'automation':
+                            iconClass = 'fas fa-cogs';
+                            break;
+                        case 'team management':
+                            iconClass = 'fas fa-users';
+                            break;
+                        case 'safety protocols':
+                            iconClass = 'fas fa-shield-alt';
+                            break;
+                        case 'inventory control':
+                            iconClass = 'fas fa-boxes';
+                            break;
+                        case 'client coordination':
+                            iconClass = 'fas fa-handshake';
+                            break;
+                        default:
+                            iconClass = ''; // No icon if no match
+                    }
+
+                    return `
+                        <div class="skill-item">
+                            ${iconClass ? `<i class="${iconClass} skill-icon"></i>` : ''}
+                            <p>${skill}</p>
+                        </div>
+                    `;
+                }).join('');
             })
             .catch(error => console.error('Error fetching skills:', error));
     </script>
