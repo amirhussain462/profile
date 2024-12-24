@@ -30,6 +30,24 @@
             text-align: center;
             padding: 4rem 1rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            z-index: 1;
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
         }
 
         header h1 {
@@ -73,6 +91,7 @@
             background: #ffffff;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
+            text-align: justify;
         }
 
         section h2 {
@@ -142,19 +161,10 @@
         <div class="about-container">
             <div class="about-content">
                 <h2>About Me</h2>
-                <p>
-                    As a results-driven <strong>Automation & Electrical Engineer</strong>, I bring over 
-                    <strong>9 years of expertise</strong> in designing, installing, and optimizing cutting-edge systems 
-                    for industries across the UAE and Saudi Arabia. My portfolio includes transformative 
-                    projects in <em>material handling systems</em>, <em>automated car parking solutions</em>, 
-                    and <em>conveyor installations</em>, tailored to meet complex operational challenges.
-                </p>
-                <p>
-                    Leveraging my <strong>Lean Six Sigma Black Belt certification</strong>, I excel in delivering 
-                    streamlined processes that reduce downtime, optimize resources, and enhance overall 
-                    system efficiency. My commitment to excellence ensures projects are executed with 
-                    precision, adhering to the highest standards of safety and quality.
-                </p>
+                <p>I am a seasoned Automation & Electrical Engineer with over 9 years of proven expertise in delivering state-of-the-art solutions across automation, electrical systems, and material handling domains. My work spans the UAE and Saudi Arabia, with a portfolio featuring high-impact projects like automated car parking solutions, car turntable installations, conveyor systems, and material sorting machines.</p>
+                <p>With a Lean Six Sigma Black Belt certification, I am committed to optimizing system performance, reducing downtime, and ensuring seamless operations. My dedication to safety, precision, and quality is reflected in every project I undertake, meeting and exceeding client expectations.</p>
+                <p>Passionate about innovation, I integrate cutting-edge technologies with best engineering practices to turn challenges into opportunities. From leading multidisciplinary teams to troubleshooting complex systems and mentoring professionals, I take pride in delivering results that drive success.</p>
+                <p>Let’s connect and collaborate on solutions that make a difference!</p>
             </div>
             <div class="about-image">
                 <img src="about_me.jpg" alt="About Me">
