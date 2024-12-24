@@ -15,21 +15,45 @@
         }
 
         header {
-            background-color: #3949ab;
+            position: relative;
             color: white;
-            padding: 1rem 0;
             text-align: center;
+            padding: 3rem 1rem;
+            background: url('header-skillimage.jpg') no-repeat center center/cover; /* Add your header image */
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for text enhancement */
+            z-index: 0;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            position: relative;
+            font-size: 3rem;
             font-weight: bold;
+            z-index: 1;
             margin: 0;
         }
 
+        header p {
+            position: relative;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-top: 1rem;
+            z-index: 1;
+        }
+
         header nav {
+            position: relative;
             background-color: #1a237e;
             padding: 0.5rem 0;
+            z-index: 1;
         }
 
         header nav a {
@@ -70,25 +94,26 @@
         }
 
         .skill-item {
-            background: linear-gradient(135deg, #f3f4f6, #ffffff);
+            background: linear-gradient(135deg, #3949ab, #5c6bc0);
+            color: white;
             border-radius: 10px;
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
+            border: 2px solid #1a237e;
         }
 
         .skill-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .skill-item p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin: 1rem 0 0;
-            color: #3949ab;
         }
 
         .skill-icon {
@@ -117,6 +142,7 @@
 <body>
     <header>
         <h1>Skills</h1>
+        <p>Your Vision, My Expertise</p>
         <nav>
             <a href="index.html">Home</a>
             <a href="skills.html">Skills</a>
@@ -145,20 +171,35 @@
                 skillsGrid.innerHTML = data.skills.map(skill => {
                     let iconClass = "";
                     switch (skill.toLowerCase()) {
-                        case 'automation':
-                            iconClass = 'fas fa-cogs';
+                        case 'project lifecycle management':
+                            iconClass = 'fas fa-project-diagram';
                             break;
-                        case 'team management':
-                            iconClass = 'fas fa-users';
+                        case 'lean six sigma expertise':
+                            iconClass = 'fas fa-chart-line';
                             break;
-                        case 'safety protocols':
+                        case 'equipment installation and commissioning':
+                            iconClass = 'fas fa-tools';
+                            break;
+                        case 'advanced troubleshooting and maintenance':
+                            iconClass = 'fas fa-wrench';
+                            break;
+                        case 'client relationship management':
+                            iconClass = 'fas fa-handshake';
+                            break;
+                        case 'leadership and team management':
+                            iconClass = 'fas fa-users-cog';
+                            break;
+                        case 'occupational health and safety':
                             iconClass = 'fas fa-shield-alt';
                             break;
-                        case 'inventory control':
+                        case 'technical documentation and interpretation':
+                            iconClass = 'fas fa-file-alt';
+                            break;
+                        case 'inventory optimization':
                             iconClass = 'fas fa-boxes';
                             break;
-                        case 'client coordination':
-                            iconClass = 'fas fa-handshake';
+                        case 'quality control and assurance':
+                            iconClass = 'fas fa-clipboard-check';
                             break;
                         default:
                             iconClass = ''; // No icon if no match
