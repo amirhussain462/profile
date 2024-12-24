@@ -47,12 +47,11 @@
 
         section {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 2rem auto;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
         }
 
         h2 {
@@ -60,17 +59,23 @@
             border-bottom: 2px solid #3949ab;
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
         }
 
         .certification-item {
-            margin-bottom: 1.5rem;
             padding: 1rem;
             background: #e8f5e9;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-            width: 80%;
+            text-align: center;
         }
 
         .certification-item:hover {
@@ -80,8 +85,17 @@
 
         .certification-item img {
             max-width: 100%;
+            height: 150px;
+            object-fit: cover;
             border-radius: 5px;
             margin-bottom: 1rem;
+        }
+
+        .certification-item p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #333;
+            text-align: justify;
         }
 
         footer {
@@ -109,22 +123,26 @@
     </header>
     <section>
         <h2>My Certifications</h2>
-        <div id="certification-list">
+        <div class="certification-grid">
             <div class="certification-item">
                 <img src="cert-yellow-belt.jpg" alt="Lean Six Sigma Yellow Belt">
                 <p><strong>Lean Six Sigma Yellow Belt</strong></p>
+                <p>Description placeholder for Lean Six Sigma Yellow Belt.</p>
             </div>
             <div class="certification-item">
                 <img src="cert-green-belt.jpg" alt="Lean Six Sigma Green Belt">
                 <p><strong>Lean Six Sigma Green Belt</strong></p>
+                <p>Description placeholder for Lean Six Sigma Green Belt.</p>
             </div>
             <div class="certification-item">
                 <img src="cert-black-belt.jpg" alt="Lean Six Sigma Black Belt">
                 <p><strong>Lean Six Sigma Black Belt</strong></p>
+                <p>Description placeholder for Lean Six Sigma Black Belt.</p>
             </div>
             <div class="certification-item">
                 <img src="cert-iosh-nebosh.jpg" alt="IOSH and NEBOSH Certificates">
                 <p><strong>IOSH & NEBOSH Certificates</strong></p>
+                <p>Description placeholder for IOSH & NEBOSH Certificates.</p>
             </div>
         </div>
     </section>
