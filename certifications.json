@@ -4,22 +4,26 @@
         {
             "name": "Lean Six Sigma Yellow Belt",
             "file": "lean-six-sigma-yellow-belt.pdf",
-            "image": "cert-yellow-belt.jpg"
+            "image": "cert-yellow-belt.jpg",
+            "description": "I hold a Lean Six Sigma Yellow Belt certification, which demonstrates my understanding of Lean Six Sigma principles and tools for process improvement. With this certification, I am equipped to support and contribute to projects aimed at reducing inefficiencies, eliminating waste, and enhancing overall quality. It reflects my commitment to continuous improvement and operational excellence."
         },
         {
             "name": "Lean Six Sigma Green Belt",
             "file": "lean-six-sigma-green-belt.pdf",
-            "image": "cert-green-belt.jpg"
+            "image": "cert-green-belt.jpg",
+            "description": "I hold a Lean Six Sigma Green Belt certification, which signifies my advanced knowledge of Lean Six Sigma methodologies and tools. This certification equips me to lead and manage improvement projects, analyze processes, and implement solutions to reduce inefficiencies and enhance quality. It reflects my ability to drive continuous improvement initiatives and deliver measurable results in operational excellence."
         },
         {
             "name": "Lean Six Sigma Black Belt",
             "file": "lean-six-sigma-black-belt.pdf",
-            "image": "cert-black-belt.jpg"
+            "image": "cert-black-belt.jpg",
+            "description": "I hold a Lean Six Sigma Black Belt certification, demonstrating my expertise in Lean Six Sigma principles, tools, and methodologies. This certification qualifies me to lead complex improvement projects, mentor teams, and drive strategic initiatives to optimize processes, eliminate waste, and enhance organizational performance. It reflects my commitment to delivering impactful results through continuous improvement and operational excellence."
         },
         {
             "name": "IOSH & NEBOSH Certificates",
             "file": "IOSH-MS-and-NEBOSH-HSW-certificates.pdf",
-            "image": "cert-iosh-nebosh.jpg"
+            "image": "cert-iosh-nebosh.jpg",
+            "description": "I hold IOSH Managing Safely and NEBOSH Health and Safety at Work certifications, which demonstrate my knowledge and competency in workplace health and safety. These certifications equip me to identify and manage risks, ensure compliance with safety standards, and promote a safe working environment. Together, they reflect my commitment to maintaining and improving health and safety practices within any organization."
         }
     ]
 }
