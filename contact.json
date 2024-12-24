@@ -1,5 +1,9 @@
 {
     "email": "amirhussain462@gmail.com",
-    "phone": "UAE: +971-547637988 | KSA: +966-508795954 | India: +91-8885321600",
+    "phone": {
+        "UAE": "+971-547637988",
+        "KSA": "+966-508795954",
+        "India": "+91-8885321600"
+    },
     "linkedin": "https://www.linkedin.com/in/amirhussainshaik"
 }
