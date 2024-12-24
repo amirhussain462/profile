@@ -6,84 +6,130 @@
     <title>Certifications - Amir Hussain Shaik</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
             color: #333;
+            line-height: 1.6;
         }
 
         header {
-            background: #2c3e50;
+            background: #3949ab;
             color: white;
+            text-align: center;
             padding: 2rem;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1a237e;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
         section {
+            padding: 2rem;
             max-width: 800px;
             margin: 2rem auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
 
-        .certificates {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        h2 {
+            color: #1a237e;
+            border-bottom: 2px solid #3949ab;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .certificate {
-            width: 200px;
+        .certification-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #e8f5e9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            width: 80%;
         }
 
-        .certificate img {
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        .certification-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification-item img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
         }
 
         footer {
             text-align: center;
             padding: 1rem;
-            background: #2c3e50;
+            background: #3949ab;
             color: white;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-    <h1>Amir Hussain Shaik</h1>
-    <p>Electro-Mechanical Engineer | CPD Certified Lean Six Sigma Black Belt | Automation Specialist</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="skills.html">Skills</a>
-        <a href="experience_projects.html">Experience & Projects</a>
-        <a href="certifications.html">Certifications</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
         <h1>Certifications</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience_projects.html">Experience & Projects</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </header>
-    <section id="certifications"></section>
+    <section>
+        <h2>My Certifications</h2>
+        <div id="certification-list">
+            <div class="certification-item">
+                <img src="cert-yellow-belt.jpg" alt="Lean Six Sigma Yellow Belt">
+                <p><strong>Lean Six Sigma Yellow Belt</strong></p>
+            </div>
+            <div class="certification-item">
+                <img src="cert-green-belt.jpg" alt="Lean Six Sigma Green Belt">
+                <p><strong>Lean Six Sigma Green Belt</strong></p>
+            </div>
+            <div class="certification-item">
+                <img src="cert-black-belt.jpg" alt="Lean Six Sigma Black Belt">
+                <p><strong>Lean Six Sigma Black Belt</strong></p>
+            </div>
+            <div class="certification-item">
+                <img src="cert-iosh-nebosh.jpg" alt="IOSH and NEBOSH Certificates">
+                <p><strong>IOSH & NEBOSH Certificates</strong></p>
+            </div>
+        </div>
+    </section>
     <footer>
         <p>© 2024 Amir Hussain Shaik</p>
     </footer>
-    <script>
-        fetch('certifications.json')
-            .then(response => response.json())
-            .then(data => {
-                const section = document.getElementById('certifications');
-                let html = `<h2>${data.title}</h2><div class="certificates">`;
-                data.certificates.forEach(cert => {
-                    html += `
-                        <div class="certificate">
-                            <a href="${cert.file}" target="_blank" download>
-                                <img src="${cert.image}" alt="${cert.name}">
-                            </a>
-                            <p>${cert.name}</p>
-                        </div>`;
-                });
-                html += '</div>';
-                section.innerHTML = html;
-            })
-            .catch(error => console.error('Error loading certifications:', error));
-    </script>
 </body>
 </html>
