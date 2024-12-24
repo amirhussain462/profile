@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications - Amir Hussain Shaik</title>
     <style>
-        /* General Styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(to bottom, #eef2f3, #ffffff);
@@ -18,7 +17,6 @@
             background-color: #1a237e;
             color: #fff;
             padding: 1rem 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,10 +35,9 @@
         nav a {
             color: #ffcc80;
             text-decoration: none;
-            padding: 0.5rem 1rem;
             font-size: 1rem;
             font-weight: bold;
-            border-radius: 5px;
+            padding: 0.5rem;
             transition: background 0.3s, transform 0.3s;
         }
 
@@ -50,13 +47,13 @@
         }
 
         main {
-            padding: 2rem;
             max-width: 1200px;
-            margin: auto;
+            margin: 2rem auto;
+            padding: 1rem;
             text-align: center;
         }
 
-        main h2 {
+        h2 {
             font-size: 2rem;
             color: #1a237e;
             margin-bottom: 1.5rem;
@@ -69,38 +66,36 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
         .certification-item {
-            background: #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background: white;
             border-radius: 10px;
             padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .certification-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .certification-item img {
             width: 100%;
-            height: auto;
             border-radius: 5px;
         }
 
         .certification-description {
             margin-top: 0.5rem;
-            text-align: justify;
             font-size: 0.9rem;
             color: #555;
+            text-align: justify;
         }
 
         footer {
             background-color: #1a237e;
-            color: #fff;
+            color: white;
             text-align: center;
             padding: 1rem;
         }
@@ -112,7 +107,6 @@
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <h1>Certifications</h1>
         <nav>
@@ -124,18 +118,15 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
         <h2>My Certifications</h2>
         <div class="certifications-grid" id="certifications"></div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>© 2024 Amir Hussain Shaik | Powered by GitHub Pages</p>
     </footer>
 
-    <!-- JSON Data Fetching -->
     <script>
         fetch('certifications.json')
             .then(response => response.json())
@@ -143,17 +134,17 @@
                 const certificationsContainer = document.getElementById('certifications');
                 let certificationsHTML = '';
 
-                data.certifications.forEach(cert => {
+                data.certificates.forEach(cert => {
                     certificationsHTML += `
                         <div class="certification-item">
                             <img src="${cert.image}" alt="${cert.name}">
-                            <p class="certification-description">${cert.description || 'Description coming soon...'}</p>
+                            <p class="certification-description">${cert.description}</p>
                         </div>`;
                 });
 
                 certificationsContainer.innerHTML = certificationsHTML;
             })
-            .catch(error => console.error('Error fetching certifications:', error));
+            .catch(error => console.error('Error loading certifications:', error));
     </script>
 </body>
 </html>
